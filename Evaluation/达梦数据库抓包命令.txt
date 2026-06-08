@@ -1,0 +1,19 @@
+select * from V$version;    #查询版本
+SELECT USERNAME, PASSWORD FROM DBA_USERS;     #查看用户以及口令信息
+SELECT * FROM V$PARAMETER WHERE NAME= 'PWD_POLICY';      #口令策略
+select
+b.username as "达梦数据库用户名",
+a.failed_num as "失败次数限制",
+a.failed_attemps as "失败尝试次数",
+a.lock_time as "锁定时间(min)"
+from sysusers a right join all_users b on a.id=b.user_id;    
+
+SELECT PROFILE, RESOURCE_NAME, LIMIT
+FROM DBA_PROFILES
+WHERE RESOURCE_NAME IN ('CONNECT_TIME', 'CONNECT_IDLE_TIME');   # 登录连接超时及自动退出功能
+
+SELECT USERNAME FROM DBA_USERS;      #查看所有用户
+SELECT * FROM DBA_SYS_PRIVS ORDER BY GRANTEE;     #查看系统权限，所有用户
+SELECT * FROM V$DM_INI WHERE PARA_NAME='ENABLE_AUDIT';  #查询审计开关当前的值
+select * from V$AUDITRECORDS；    #查看日志记录
+SELECT * FROM V$PARAMETER WHERE NAME='ENABLE_ENCRYPT';   #SSL 协议加密

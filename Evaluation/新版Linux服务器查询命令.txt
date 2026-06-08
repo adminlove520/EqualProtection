@@ -1,0 +1,47 @@
+cat /etc/*release*
+ifconfig
+cat /etc/passwd
+cat /etc/shadow
+cat /etc/pam.d/system-auth
+cat /etc/pam.d/password-auth
+cat /etc/pam.d/common-auth
+cat /etc/security/pwquality.conf
+cat /etc/login.defs
+cat /etc/pam.d/sshd
+chage –l root
+passwd –S root
+
+cat /etc/profile
+service sshd status
+netstat -ano | grep 22
+
+cat /etc/group
+ll /etc/shadow
+ll /etc/passwd
+ll /etc/profile
+cat /etc/ssh/sshd_config | grep PermitRootLogin
+cat /etc/sudoers
+sestatus
+service rsyslog status
+service auditd status
+date
+cat /etc/rsyslog.conf
+cat /var/log/messages
+head -10 /var/log/audit/audit.log
+systemctl list-unit-files | grep enabled
+rpm -aq
+yum list installed
+systemctl list-units --type=service
+
+netstat –na
+
+netstat -tuanp
+netstat -ntlp
+cat /etc/hosts.deny 
+cat /etc/hosts.allow 
+iptables -L
+
+firewall-cmd --list-all
+echo $HISTSIZE
+cat /etc/profile | grep TMOUT
+cat /etc/profile | grep HISTSIZE

@@ -1,0 +1,3 @@
+auth         required        pam_faillock.so preauth silent audit deny=3 unlock_time=600
+auth    [default=die]     pam_faillock.so  authfail  audit deny=3
+account    required          pam_faillock.so

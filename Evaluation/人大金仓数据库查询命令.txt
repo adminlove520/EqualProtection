@@ -1,0 +1,34 @@
+-- 查看用户权限
+SELECT * FROM sys_user;
+
+-- 查看角色权限
+SELECT * FROM sys_roles;
+
+-- 查看数据库对象权限
+SELECT * FROM information_schema.table_privileges;
+
+-- 查看自主访问控制策略
+SELECT * FROM sys_default_acl;
+-- 查看完整性约束
+SELECT * FROM information_schema.table_constraints;
+
+-- 查看外键约束
+SELECT * FROM information_schema.referential_constraints;
+-- 查看数据库版本
+SELECT version();
+
+-- 查看运行参数
+SHOW ALL;
+
+-- 查看监听地址
+SHOW listen_addresses;
+
+-- 查看SSL配置
+SHOW ssl;
+SHOW ssl_ciphers;
+-- 查看连接数限制
+SHOW max_connections;
+
+-- 查看超时设置
+SHOW idle_in_transaction_session_timeout;
+SHOW statement_timeout;
